@@ -56,6 +56,7 @@ class Reviewer(Mentors):
         else:
             return 'Ошибка'
 
+
 class Student:
     def __init__(self, name, surname, gender):
         self.name = name
@@ -75,7 +76,7 @@ class Student:
             return 'Ошибка'
 
     def __str__(self):
-        return (f'Имя: {self.name} \nФамилия {self.surname} \nСредняя оценка за домашние задания: {self.average_grade()}\n'
+        return (f'Имя: {self.name} \nФамилия: {self.surname} \nСредняя оценка за домашние задания: {self.average_grade()}\n'
                 f'Курсы в процессе изучения: {self.courses_in_progress}\nЗавершенные курсы: {self.finished_courses}')
 
     def average_grade(self):
@@ -132,10 +133,12 @@ lecturer_2.course_attached += ['Phyton', 'GO']
 student_1 = Student('Alexandr', 'Kaigorodov', 'male')
 student_1.courses_in_progress += ['PHP']
 student_1.rate_lc(lecturer_1, 'PHP', 3)
+student_1.finished_courses += ['GO']
 
 student_2 = Student('Diana', 'Ovechkina', 'Female')
 student_2.courses_in_progress += ['GO']
 student_2.rate_lc(lecturer_2, 'GO', 7)
+student_2.finished_courses += ['Phyton']
 
 reviewer_1 = Reviewer('Dmitrii', 'Shavrov')
 reviewer_1.course_attached += ['PHP']
